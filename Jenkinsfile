@@ -55,7 +55,7 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
  
 
-        docker.withRegistry('https://hub.docker.com/', 'docker-hub') {
+        docker.withRegistry('https://registry.hub.docker.com/', 'docker-hub') {
 
             app.push("${env.BUILD_NUMBER}")
 
