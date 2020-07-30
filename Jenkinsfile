@@ -71,6 +71,8 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
                    sh 'docker rm -f web_con || true'
 
+		   docker.withRegistry('https://registry.hub.docker.com/', 'docker-hub')
+
                    sh 'docker run -d -p 8000:80 --name web_con webapp'
 
                 }
