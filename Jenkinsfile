@@ -34,13 +34,7 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
     {
 
-                  stage('Clone repository') {
 
-        checkout scm
-
-    }
-
- 
 
     stage('Build image') {
 
