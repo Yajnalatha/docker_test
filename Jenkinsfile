@@ -61,12 +61,16 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
             app.push("latest")
 
+	    sh 'docker rm -f web_con || true'
+
+                   sh 'docker run -d -p 8000:80 --name web_con webapp'
+
+
         }
 
                                
 
-                stage('run')
-
+/*         stage('run')
                 {
 
                    sh 'docker rm -f web_con || true'
@@ -75,7 +79,7 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
                    sh 'docker run -d -p 8000:80 --name web_con webapp'
 
-                }
+                }*/
 
     }
 
