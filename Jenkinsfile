@@ -24,9 +24,21 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
       ) {
 
+ 
+
      node(label) {
 
           def app
+
+    container('docker')
+
+    {
+
+                  stage('Clone repository') {
+
+        checkout scm
+
+    }
 
  
 
@@ -52,8 +64,22 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
         }
 
+                               
+
+                stage('run')
+
+                {
+
+                   sh 'docker rm -f web_con || true'
+
+                   sh 'docker -d -p 8000:80 --name web_con webapp'
+
+                }
+
     }
 
-                                                }
+    }
 
-                                                }
+}
+
+}
