@@ -57,11 +57,13 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
         docker.withRegistry('https://registry.hub.docker.com/', 'docker-hub') {
 
-            app.push("${env.BUILD_NUMBER}")
+            //app.push("${env.BUILD_NUMBER}")
 
             app.push("latest")
 
 	    sh 'docker rm -f web_con || true'
+	      
+	      sh 'docker full yajnalatha/webapp_4'
 
                    sh 'docker run -d -p 8000:80 --name web_con yajnalatha/webapp_3'
 
