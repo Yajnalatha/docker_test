@@ -65,9 +65,9 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
                    sh 'docker run -d -p 8000:80 --name web_con yajnalatha/webapp_2'
 
-		   sh 'docker images -a'
+		   sh 'docker images'
 
-		   sh 'docker container ps'
+		   sh 'docker ps'
 
 
         }
