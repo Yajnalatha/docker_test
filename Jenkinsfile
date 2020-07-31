@@ -45,7 +45,7 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
      
 
-        app = docker.build("yajnalatha/webapp_1")
+        app = docker.build("yajnalatha/webapp_2")
 
     }
 
@@ -63,7 +63,7 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
 	    sh 'docker rm -f web_con || true'
 
-                   sh 'docker run -d -p 8000:80 --name web_con yajnalatha/webapp_1'
+                   sh 'docker run -d -p 8000:80 --name web_con yajnalatha/webapp_2'
 
 
         }
