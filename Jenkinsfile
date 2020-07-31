@@ -63,7 +63,7 @@ podTemplate(label: label, serviceAccount: serviceaccount, containers: [
 
 	    sh 'docker rm -f web_con || true'
 	      
-	     # sh 'docker pull yajnalatha/webapp_4'
+	     sh 'docker pull yajnalatha/webapp_4'
 
                    sh 'docker run -d -p 8000:80 --name web_con yajnalatha/webapp_3'
 
